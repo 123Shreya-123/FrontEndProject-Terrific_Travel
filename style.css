@@ -1,0 +1,289 @@
+/* Check Point one Styling  */
+#logo {
+  height: 3rem;
+}
+
+.navbar {
+  background-color: whitesmoke;
+  color: black;
+}
+
+.nav-link {
+  font-family: 'Dosis', sans-serif;
+  color: black;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+.dropdown-menu {
+  display: none;
+}
+
+.hero-part {
+  height: 90vh;
+  width: 100%;
+  background-image: url("Images/bg.jpg");
+  background-size: cover;
+}
+
+.heading-text {
+  font-family: 'Noto Sans', serif;
+  font-weight: 900;
+  margin: 0;
+}
+
+#location {
+  color: #260f15;
+}
+
+.hero {
+  display: flex;
+  padding-top: 50px;
+  flex-direction: column;
+  align-items: center; 
+}
+
+.book-button {
+  padding: 10px 20px; 
+  margin-top: 70px; 
+  background-color: #8db3a5; 
+  color: #09332b; 
+  border: none; 
+  border-radius: 5px; 
+  cursor: pointer;
+  font-size: 1.5rem;
+  font-family: 'Playfair Display', serif;
+}
+
+.book-button:hover {
+  background-color: #224202;
+  font-size: 1.8rem; 
+  color: #d8ebc5;
+}
+
+
+/* Checkpoint 2 styling  */
+body{
+    margin: 0;
+    background-color: #debcf7;
+}
+
+.main-heading{
+    font-size: 35px;
+    text-align: center;
+    color: black;
+}
+
+.main-container-1{
+    display: flex; 
+}
+
+.left-main-container{
+    width: 50%;
+}
+
+.left-main-container img{
+    width: 75%;
+    margin-top: 5%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto; 
+}
+
+.right-main-container{
+    width: 50%; 
+}
+
+.right-main-container form{
+    display: flex;
+    flex-direction: column;
+    margin: 20%;
+}
+
+@media only screen and (max-width: 768px) {
+    .main-container-1{
+        display: block;
+    }
+
+    .left-main-container{
+        width: 100%;
+    }
+
+    .right-main-container{
+        width: 100%; 
+    }
+}
+
+#main-container-2{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: 10%;
+    margin: 8%;
+}
+
+.card{
+    background-color: #b9dfeb;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+#main-container-2 .card img{
+    width: 100%;
+}
+
+.rateRating{
+    display: flex;
+    justify-content: space-between;
+}
+
+.service{
+    padding: 10px;
+    background-color: #672e99;
+    color: white;
+    border: none;
+    border-radius: 10%; 
+}
+
+#main-container-3{  
+    padding-top: 300px;
+    display: grid;
+    grid-template-columns: auto auto auto auto auto auto;
+    gap: 3%;
+    margin: 3%;
+}
+
+#main-container-3 .card img{
+    height: 220px;
+    width: 98%;
+}
+
+.modal p{
+    color: black;
+}
+
+/* Checkpoint 3 styling  */
+
+@import "https://unpkg.com/open-props";
+@import "https://unpkg.com/open-props/normalize.min.css";
+
+
+
+.galary-section-container {
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+  background-color: #d1bb86;
+}
+
+:root {
+  --magnifier: 6;
+  --gap: 1vmin;
+  --transition: 0.5s;
+}
+  
+.galary-section-container .container {
+  width: 90vw;
+  height: 80vmin;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--gap);
+}
+
+.galary-section-container img {
+  --brightness: 0.75;
+  --grayscale: 1;
+  transition: flex var(--transition), filter var(--transition);
+  height: 100%;
+  filter: grayscale(var(--grayscale)) brightness(var(--brightness));
+  object-fit: cover;
+  overflow: hidden;
+  flex: 1;
+}
+
+.galary-section-container img:hover {
+  --brightness: 1.15;
+  --grayscale: 0;
+  flex: var(--magnifier);
+}
+
+
+/* About Section Styling  */
+
+.about-container{
+    display: flex;
+    justify-content: space-around;
+    background-color: #c0d689;
+    height: 80vh;
+}
+
+.right-about-container{
+    width: 45%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.right-about-container img{
+    width: 80%;  
+    max-height: 70vh;
+    border-radius: 10%;
+}
+
+.left-about-container{
+    width: 45%;
+} 
+
+.left-about-container p{
+    width: 90%;
+    color: maroon;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: xx-large;
+    line-height: 1.4; 
+    text-align: center;
+    max-height: 80vh;
+}
+
+@media only screen and (max-width: 1450px) {
+    .left-about-container p{
+        font-size: x-large;
+    }
+}
+
+@media only screen and (max-width: 1300px) {
+    .left-about-container p{
+        font-size: x-large;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .about-container{
+        flex-direction: column;
+        height: 120vh; 
+    }
+    .right-about-container{ 
+        width: 90%;
+    }
+    .left-about-container{
+        width: 90%;
+    } 
+}
+
+/* Footer Styling  */
+
+.footer-container{
+    background-color: violet;
+    color: white;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+@media only screen and (max-width: 768px) {
+    .footer-container{
+        flex-direction: column;
+    }
+}
+
+
