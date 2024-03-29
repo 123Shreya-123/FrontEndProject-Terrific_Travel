@@ -189,55 +189,59 @@ const services = [
 
 // Checkpoint 4 script
 
+var LoginModal = document.getElementById("LoginModal");
+
+// Get the button that opens the modal
+var btn = document.getElementById("submit-btn")
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == loginModal) {
+    LoginModal.style.display = "none";
+  }
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+    LoginModal.style.display = "none";
+}
+
 
   function validateEmail(email) {
     const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     return re.test(email.toLowerCase());
   }
 
-  function validateRegistrationForm() {
-    const form = document.getElementById("Login-Form");
-    const email = form.email.value;
-    const pwd = form.pwd.value;
+  
 
-    if (!validateEmail(email)) {
-      alert("Please enter a valid email address.");
-      return false;
-    }
-
-    if (pwd.length < 8) {
-      alert("Password should be at least 8 characters long.");
-      return false;
-    }
-
-    return true;
+document.getElementById("Login-Form").addEventListener("submit", function(event) {
+  event.preventDefault();
+  // Login form Validation
+  let emailID = document.getElementById('emailID').value;
+  let password2 = document.getElementById('inputPassword5').value;
+  if(emailID && password2){
+    alert('LogIn successfull!');
+    document.getElementById('emailID').value='';
+    document.getElementById('inputPassword5').value='';
+    LoginModal.style.display = "none";
   }
-
-  function showLoginModal() {
-    const loginModal = new bootstrap.Modal(document.getElementById("LoginModal"), {
-      backdrop: "static",
-      keyboard: false,
-    });
-    LoginModal.show();
+  else{
+    alert('Please fill in the details correctly!')
   }
-
-  function showRegisterLink() {
-    window.location.href = "index.html";
-  }
+});
 
 
 
+//Registration Form Validation
 
-
-
-var registerModal = document.getElementById("RegisterModal");
+var RegisterModal = document.getElementById("RegisterModal");
                                 
 // Get the button that opens the modal
 var btn = document.getElementById("submit-btn")
 
 // When the user clicks the button, open the modal
     btn.onclick = function() {
-    registerModal.style.display = "block";
+    RegisterModal.style.display = "block";
 }
 
 // Get the <span> element that closes the modal
@@ -245,13 +249,13 @@ var span = document.getElementsByClassName("close2")[0];
 
 // When the user clicks on <span> (x), close the modal
 span.onclick = function() {
-    registerModal.style.display = "none";
+    RegisterModal.style.display = "none";
 }
 
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
-    if (event.target == registerModal) {
-        registerModal.style.display = "none";
+    if (event.target == RegisterModal) {
+        RegisterModal.style.display = "none";
     }
 }
 
@@ -266,21 +270,24 @@ document.getElementById("Registration-Form").addEventListener("submit", function
     event.preventDefault();
     
    
-    let fullname = document.getElementById('fullName');
-    let contact = document.getElementById('contact');
-    let email = document.getElementById('email');
-    let password = document.getElementById('password');
-    let conf_password = document.getElementById('confpassword'); 
-    if(fullname.value!='' && contact.value!='' && email.value!='' && password.value!='' && conf_password!=''){
+    let fullname = document.getElementById('fullName').value;
+    let contact = document.getElementById('contact').value;
+    let email = document.getElementById('email').value;
+    let password = document.getElementById('password').value;
+    let conf_password = document.getElementById('confpass').value; 
+    if(fullname && contact && email && password && conf_password{
         alert('Registration Successfull!');
-        fullname.value = '';
-        contact.value = '';
-        email.value = '';
-        password.value = '';
-        conf_password.value = '';
-        registerModal.style.display = "none";
+        document.getElementById('fullName').value = '';
+        document.getElementById('contact').value = '';
+        document.getElementById('email').value = '';
+        document.getElementById('password') = '';
+        document.getElementById('confpass').value = '';
+        RegisterModal.style.display = "none";
     }
     else{
         alert('Please fill all the details');
     }
 });
+
+
+
